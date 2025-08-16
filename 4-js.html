@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 200px;
+            width: 300px;
+            background-color: rgb(17, 231, 255);
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+    
+    <div>
+        <label for="side">Side : </label>
+        <input type="number" id="side" placeholder="Enter first number">
+    </div>
+    <br>
+    <div>
+    <button type="button" onclick="usePrompt('surface area')">Surface Area</button>
+    <button type="button" onclick="usePrompt('perimeter')">Perimeter</button>
+    
+    </div>
+    <br>
+
+    <div id="result"></div>
+    <script>
+        function usePrompt(operation){
+            let a= parseFloat(document.getElementById("side").value)
+            let result='';
+
+            if(isNaN(a)){
+            result='Please enter a numbers';
+        }else{
+            switch(operation){
+                case 'surface area':
+                    result = a * a;
+                    break;
+                case 'perimeter':
+                    result = a * 4;
+                    break;
+            }
+            
+        }
+        document.getElementById('result').innerText = 'Result : ' + result;
+    }
+    document
+    </script>
+</body>
+</html>
